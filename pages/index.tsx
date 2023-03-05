@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 export default function Index() {
   const commonModel = {
     PageIndex : 0,
-    PageSize  : 2,
+    PageSize  : 10,
     SortColumb  : "ProductName" ,
   }
 

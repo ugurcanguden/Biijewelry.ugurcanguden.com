@@ -48,7 +48,7 @@ export default function Index() {
           open={showConfirm}
         />
       </div>
-      <Row justify="center" >
+      <Row >
         {
           products?.map((product: any, index: number) =>
             <Card title={product.ProductName} key={index} 

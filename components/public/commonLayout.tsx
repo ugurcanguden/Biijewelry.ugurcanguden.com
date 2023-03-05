@@ -6,36 +6,36 @@ import router from 'next/router';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const menuItems: MenuProps['items'] = 
-[
-{
-  key : "/",
-  label : "Ürünler",
-  onClick : ()=>{ router.push("/") }
-},
-{
-  key : "/auth/login", 
-  onClick : ()=>{ router.push("/auth/login") },
-  style : {marginLeft : "80%"},
-  icon : <UserOutlined />
-}
-];
+const menuItems: MenuProps['items'] =
+  [
+    {
+      key: "/",
+      label: "Ürünler",
+      onClick: () => { router.push("/") }
+    },
+    {
+      key: "/auth/login",
+      onClick: () => { router.push("/auth/login") },
+      style: { marginRight: "10%" },
+      icon: <UserOutlined />
+    }
+  ];
 
 
 type Props = {
   children?: React.ReactNode,
-  selectedKey : string
+  selectedKey: string
 };
-const CommonLayout: React.FC<Props> = ({ children,selectedKey }) => {
-  
-  const [selectedKeys,setSelectedKeys] = useState(['/']);
-  const {token: { colorBgContainer }} = theme.useToken();
-  
-  useEffect(()=>{
-    let key = menuItems.find(r=>r?.key == selectedKey)?.key;
-    if(key != undefined && key?.toString()?.length>0)
-       setSelectedKeys([key.toString()])
-  },[])
+const CommonLayout: React.FC<Props> = ({ children, selectedKey }) => {
+
+  const [selectedKeys, setSelectedKeys] = useState(['/']);
+  const { token: { colorBgContainer } } = theme.useToken();
+
+  useEffect(() => {
+    let key = menuItems.find(r => r?.key == selectedKey)?.key;
+    if (key != undefined && key?.toString()?.length > 0)
+      setSelectedKeys([key.toString()])
+  }, [])
   return (
     <Layout>
       <Header className="header">
